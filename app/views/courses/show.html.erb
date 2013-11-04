@@ -1,0 +1,23 @@
+<%- model_class = Course -%>
+<%- provide(:title, t('.title')) -%>
+<%- provide(:navigation_highlight, 'tools') -%>
+
+<div class="row">
+  <div class="large-12 columns">
+    <dl class="dl-horizontal">
+      <dt><strong><%= model_class.human_attribute_name(:name) %></strong></dt>
+      <dd><%= @course %></dd>
+    </dl>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-12 columns">
+    <h3>Speakers</h3>
+    <ul>
+      <% @course.speakers.each do |speaker| %>
+        <li><%= link_to speaker, speaker_path(speaker) %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

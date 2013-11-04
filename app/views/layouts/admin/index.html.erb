@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= full_title(yield(:title)) %></title>
+    <%= stylesheet_link_tag 'admin', media: 'all' %>
+    <%= yield :stylesheet_includes %>
+    <%= javascript_include_tag 'admin' %>
+    <%= yield :javascript_includes %>
+    <%= csrf_meta_tags %>
+    <%= render 'shared/shim' %>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/foundation/4.3.1/css/foundation.min.css" />
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/foundicons/2.0/stylesheets/general_foundicons.min.css" />
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/foundicons/2.0/stylesheets/accessibility_foundicons.min.css" />
+    <script src="//cdn.jsdelivr.net/foundation/4.3.1/js/foundation.min.js"></script>
+  </head>
+  <body>
+    <%= render 'shared/google_analytics' %>
+    <section class="wrapper">
+      <%= render 'layouts/admin/header' %>
+      <%= render 'shared/flash_messages' %>
+      <section id="admin" class="inner-wrapper">
+        <section class="content">
+          <%= yield %>
+        </section>
+      </section>
+      <%= render 'layouts/admin/footer' %>
+    </section>
+  </body>
+</html>

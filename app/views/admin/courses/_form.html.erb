@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="large-12 columns">
+    <%= form_for @admin_course do |f| %>
+      <%= render 'shared/error_messages', target: @admin_course %>
+      <div class="row">
+        <div class="large-6 columns">
+          <div class="row">
+            <div class="large-12 columns">
+              <%= f.label :name %>
+              <%= f.text_field :name %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-6 columns">
+          <div class="row">
+            <div class="large-12 columns">
+              <%= f.label :speakers %>
+              <%= hidden_field_tag "admin_course[speaker_ids][]", nil %>
+              <% Admin::Speaker.all.each do |speaker| %>
+                <%= check_box_tag "admin_course[speaker_ids][]", speaker.id, @admin_course.speaker_ids.include?(speaker.id), id: dom_id(speaker) %>
+                <%= speaker %><br />
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <%= admin_form_actions(f, :admin, :courses) %>
+    <% end %>
+  </div>
+</div>

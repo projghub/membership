@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="large-12 columns">
+    <%= form_for @admin_speaker do |f| %>
+      <%= render 'shared/error_messages', target: @admin_speaker %>
+      <div class="row">
+        <div class="large-6 columns">
+          <div class="row">
+            <div class="large-12 columns">
+              <%= f.label :first_name %>
+              <%= f.text_field :first_name %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-6 columns">
+          <div class="row">
+            <div class="large-12 columns">
+              <%= f.label :last_name %>
+              <%= f.text_field :last_name %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <%= admin_form_actions(f, :admin, :speakers) %>
+    <% end %>
+  </div>
+</div>

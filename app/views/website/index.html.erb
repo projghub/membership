@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="large-12 columns">
+    <h1>Your Membership Website</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-4 columns">
+    <h3>Courses</h3>
+    <ul>
+      <% @courses.each do |course| %>
+        <li><%= link_to course, course_path(course) %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="large-4 columns">
+    <h3>Events</h3>
+    <ul>
+      <% @events.each do |event| %>
+        <li><%= link_to event, event_path(event) %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="large-4 columns">
+    <h3>Speakers</h3>
+    <ul>
+      <% @speakers.each do |speaker| %>
+        <li><%= link_to speaker, speaker_path(speaker) %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

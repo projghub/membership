@@ -1,0 +1,32 @@
+<%# if advertiser_current_user %>
+  <section>
+    <header>
+      <nav class="top-bar">
+        <ul class="title-area">
+          <li class="name">
+            <%= link_to 'Dashboard', admin_dashboard_path %>
+          </li>
+        </ul>
+
+        <section class="top-bar-section">
+          <ul class="right">
+            <li class="divider"></li>
+            <li class="has-dropdown not-click"><a href="#">Tools</a>
+              <ul class="dropdown">
+                <li><%= link_to "Courses", admin_courses_path %></li>
+                <li><%= link_to "Events", admin_events_path %></li>
+                <li><%= link_to "Speakers", admin_speakers_path %></li>
+              </ul>
+            </li>
+            <li class="divider"></li>
+            <li class="has-dropdown not-click"><a href="#">My Account</a>
+              <ul class="dropdown">
+                <li><%= link_to "Logout", admin_logout_path %></li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+      </nav>
+    </header>
+  </section>
+<%# end %>

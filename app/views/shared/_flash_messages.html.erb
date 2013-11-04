@@ -1,0 +1,14 @@
+<% unless flash.blank? %>
+  <section id="flash-message">
+    <div class="row">
+      <div class="large-12 columns">
+        <% flash.each do |name, msg| %>
+          <div data-alert class="alert-box radius <%= name == :notice ? "success" : "alert" %>">
+            <a href="#" class="close">×</a>
+            <%= content_tag :div, raw(msg), id: "flash_#{name}" if msg.is_a?(String) %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </section>
+<% end %>
